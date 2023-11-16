@@ -9,27 +9,37 @@ var uppercaseArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 var numberArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 
 
-
-
-
-
-
-
-
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var correctPrompts = getPrompts ();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  
+  if (correctPrompts){
+      var newPassword = generatePassword();
+      passwordText.value = newPassword;
+ } else {
+   passwordTest.value  = "";
+ }
 }
 
+
+
+//This Function actually pulls the password utilizing a loop
+
+function generatePassword(){
+  var password = "";
+  for(var i=0; i<characterLength; i++){
+      var randomIndex = Math.floor(Math.random() * choiceArr.length);
+      password = password + choiceArr[randomIndex];
+  }
+  return password;
+}
 
 //This function will prompt the user to choose and customize their password and what will be included.
 
@@ -67,5 +77,4 @@ function getPrompts(){
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
