@@ -9,7 +9,7 @@ In the browser open the provided link. When clicking the generate password butto
 <img src="Assets/Imgs/Website.png">
 
 ## Deployment Link
-https://ihateudvrk.github.io/random-password-generator/
+https://ihateudvrk.github.io/Random-Password-Generator/
 
 ## Credits
 @ EDX Bootcamp / University of Minnesota for source HTML and CSS code.
